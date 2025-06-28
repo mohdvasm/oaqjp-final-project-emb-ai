@@ -13,7 +13,23 @@ headers = {
 def emotion_detector(
     text_to_analyze: str
 ):
+    """
+    Emotion detection function.
+    """
     try:
+
+        # Check if text is empty
+        if not text_to_analyze:
+            none_emotions = {
+            "anger": None, 
+            "disgust": None, 
+            "fear": None, 
+            "joy": None, 
+            "sadness": None, 
+            "dominant_emotion":None
+            }
+            return none_emotions
+
         # Input JSON payload
         payload = {
             "raw_document": {
